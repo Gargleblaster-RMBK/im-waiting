@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;600;800&display=swap');
+</style>
+<title>Days Since Oakridge Nuclear Power Station Was Last Updated</title>
+<meta name="description" content="A live counter tracking how long it has been since Oakridge Nuclear Power Station (ONPS) on Roblox last received an update.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☢️</text></svg>">
+<link rel="stylesheet" href="style.css">
+<link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
+</head>
+<body>
+
+<main>
+  <section class="counter" aria-live="polite">
+    <div class="days-label sarpanch-semibold">SINCE LAST MAJOR UPDATE FOR ONPS (<span id="versionDisplay"></span>)</div>
+
+    <div class="flipclock">
+      <div class="flip-group" id="yearsGroup">
+        <div class="tick" id="tickYears" data-value="00"><div data-repeat="true" aria-hidden="true"><span data-view="flip"></span></div></div>
+        <div class="flip-label sarpanch-semibold">Years</div>
+      </div>
+      <div class="flip-group">
+        <div class="tick" id="tickMonths" data-value="00"><div data-repeat="true" aria-hidden="true"><span data-view="flip"></span></div></div>
+        <div class="flip-label sarpanch-semibold">Months</div>
+      </div>
+      <div class="flip-group">
+        <div class="tick" id="tickDays" data-value="00"><div data-repeat="true" aria-hidden="true"><span data-view="flip"></span></div></div>
+        <div class="flip-label sarpanch-semibold">Days</div>
+      </div>
+      <div class="flip-group">
+        <div class="tick" id="tickHours" data-value="00"><div data-repeat="true" aria-hidden="true"><span data-view="flip"></span></div></div>
+        <div class="flip-label sarpanch-semibold">Hours</div>
+      </div>
+      <div class="flip-group">
+        <div class="tick" id="tickSeconds" data-value="00"><div data-repeat="true" aria-hidden="true"><span data-view="flip"></span></div></div>
+        <div class="flip-label sarpanch-semibold">Seconds</div>
+      </div>
+    </div>
+
+    <div class="days sr-only sarpanch-extrabold" id="days" aria-live="polite"></div>
+  </section>
+
+  <section class="panel" id="panel">
+    <div class="panel-row">
+      <span class="k">Last updated</span>
+      <span class="v" id="lastUpdated">loading&hellip;</span>
+    </div>
+    <div class="panel-row">
+      <span class="k">Current build</span>
+      <span class="v" id="version">loading&hellip;</span>
+    </div>
+    <div class="panel-row">
+      <span class="k">Entry last edited</span>
+      <span class="v" id="editedAt">loading&hellip;</span>
+    </div>
+  </section>
+
+  <a class="game-link" id="gameLink" href="https://www.roblox.com/games/15684145480/" target="_blank" rel="noopener">
+    ▸ Open ONPS on Roblox
+  </a>
+</main>
+
+<footer>
+  Not affiliated with Roblox Corporation or Koyot Digital.
+  Last-update time is entered by hand from the ONPS #announcements Discord channel.
+</footer>
+
+<div class="hazard-bar"></div>
+<script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

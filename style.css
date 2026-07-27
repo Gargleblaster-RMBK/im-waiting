@@ -1,0 +1,215 @@
+:root {
+  --bg: #0b0d0a;
+  --bg-panel: #12140f;
+  --amber: #ffb000;
+  --amber-dim: #a06e00;
+  --green: #39ff6a;
+  --text: #d8d8c8;
+  --muted: #7a7a68;
+  --border: #2a2c22;
+  --nixie: #f5681d;
+}
+
+* { box-sizing: border-box; }
+@import url('https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;600;800&display=swap');
+
+.sarpanch-regular {
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sarpanch-semibold {
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.sarpanch-extrabold {
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Sarpanch", sans-serif;
+  min-height: 100%;
+}
+
+.hazard-bar {
+  height: 14px;
+  background: repeating-linear-gradient(
+    135deg,
+    #1a1a0a,
+    #1a1a0a 18px,
+    #ffb000 18px,
+    #ffb000 36px
+  );
+}
+
+main {
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+}
+
+header .eyebrow {
+  letter-spacing: 0.3em;
+  font-size: 0.7rem;
+  color: var(--amber-dim);
+  margin-bottom: 0.5rem;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  color: var(--amber);
+  margin: 0 0 2.5rem;
+  text-shadow: 0 0 12px rgba(255, 176, 0, 0.35);
+}
+
+.counter {
+  margin-bottom: 2.5rem;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.days {
+  font-size: clamp(4.5rem, 22vw, 8rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--nixie);
+  font-variant-numeric: slashed-zero tabular-nums;
+}
+
+.days-label {
+  margin-top: 0.75rem;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.flipclock {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.flip-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.flip-group .tick,
+.flip-group .tick * {
+  font-family: "Sarpanch", sans-serif;
+}
+
+.flip-group .tick {
+  font-size: clamp(1.5rem, 5.5vw, 2.75rem);
+  color: var(--nixie);
+}
+
+.flip-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+.hms {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: var(--amber);
+  font-variant-numeric: tabular-nums;
+  opacity: 0.85;
+}
+
+.panel {
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  border-radius: 4px;
+  padding: 0.5rem 1.25rem;
+  text-align: left;
+  margin-bottom: 1.75rem;
+}
+
+.panel-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 0.85rem;
+}
+
+.panel-row:last-child {
+  border-bottom: none;
+}
+
+.panel-row .k {
+  color: var(--muted);
+}
+
+.panel-row .v {
+  color: var(--text);
+  text-align: right;
+}
+
+.game-link {
+  display: inline-block;
+  color: var(--amber);
+  text-decoration: none;
+  border: 1px solid var(--amber-dim);
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.game-link:hover {
+  background: var(--amber);
+  color: #1a1400;
+}
+
+.status {
+  margin-top: 1.5rem;
+  color: #ff5c4d;
+  font-size: 0.8rem;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.7rem;
+  padding: 1.5rem 1rem 2.5rem;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
