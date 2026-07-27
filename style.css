@@ -13,6 +13,9 @@
 * { box-sizing: border-box; }
 @import url('https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;600;800&display=swap');
 
+.tick-credits {
+  opacity: 0;
+}
 .sarpanch-regular {
   font-family: "Sarpanch", sans-serif;
   font-weight: 400;
