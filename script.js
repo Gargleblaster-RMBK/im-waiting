@@ -64,9 +64,10 @@ function breakdown(start, now) {
   const remainderMs = now.getTime() - anchor.getTime();
   const days = Math.floor(remainderMs / 86400000);
   const hours = Math.floor((remainderMs % 86400000) / 3600000);
-  const seconds = Math.floor(remainderMs / 1000) % 60;
+  const minutes = Math.floor((remainderMs % 3600000) / 60000);
+  const seconds = Math.floor((remainderMs / 1000) % 60);
 
-  return { years, months, days, hours, seconds };
+  return { years, months, days, hours, minutes, seconds };
 }
 
 function setFlip(id, value) {
@@ -88,13 +89,14 @@ function tick() {
   setFlip("tickMonths", b.months);
   setFlip("tickDays", b.days);
   setFlip("tickHours", b.hours);
+  setFlip("tickMinutes", b.minutes);
   setFlip("tickSeconds", b.seconds);
 
   const daysEl = document.getElementById("days");
   if (daysEl) {
     daysEl.textContent =
       `${b.years} years, ${b.months} months, ${b.days} days, ` +
-      `${b.hours} hours, ${b.seconds} seconds since last update`;
+      `${b.hours} hours, ${b.minutes} minutes, ${b.seconds} seconds since last update`;
   }
 }
 
